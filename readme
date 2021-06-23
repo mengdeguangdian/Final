@@ -1,1 +1,11 @@
 demo video: https://drive.google.com/file/d/1-7zFB7AhHZtopiP2Q8-6qh0_q45fi_7s/view?usp=sharing
+
+How to execute my program:
+You need to connect openmv and save main.py, then discharge the openmv. the openmv IDE will execute main.py automatically as background program.
+Use VMwave command "sudo screen /dev/ttyUSB0" to show the remoted UART infomation
+
+The bbcar will detect the line on the ground, I use ROI=(5,90,180,30), as "find line.jpg" shows, the openmv will find lines in the lower half screen of camera
+So it will not be disturbed by other lines on the background
+Then the bbcar will circle around an object continuously till the ping detect something is closely(~20cm) in front of it
+Then the bbcar will stop, it wait for an Apriltag in the camera screen to calibrate its direction
+After the camera of openmv find the apriltag, it will print it on the vmware and go to the destination(Apriltag).
